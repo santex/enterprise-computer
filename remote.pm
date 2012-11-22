@@ -8,16 +8,8 @@ __PACKAGE__->init();
 
 __DATA__
 # names
-artefact
-artifact
 device
 entity
-instrumentality
-instrumentation
 object
-physical_entity
-physical_object
 remote
-remotecontrol
-unit
-whole
+control

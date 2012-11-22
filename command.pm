@@ -8,28 +8,13 @@ __PACKAGE__->init();
 
 __DATA__
 # names
-abstract_entity
 abstraction
-act
-behest
-bid
-bidding
-charge
 command
-commandment
-commission
-countermand
-deed
 dictation
-direction
 dominate
-entity
 event
-human_action
-human_activity
-injunction
+action
 master
-open_sesame
+open
 order
-psychological_feature
-speech_act
+
