@@ -1,5 +1,5 @@
 #!/usr/bin/perl -W
-package AI::MicroStructure::remote;
+package AI::MicroStructure::santex;
 use strict;
 use AI::MicroStructure::List;
 our @ISA = qw( AI::MicroStructure::List );
@@ -8,8 +8,4 @@ __PACKAGE__->init();
 
 __DATA__
 # names
-device
-entity
-object
-remote
-control
+
