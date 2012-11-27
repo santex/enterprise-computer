@@ -35,7 +35,7 @@ sub printer {
 
      $msg = "space" unless($msg);
 
-     $cmd->{action} = sprintf(`perl $PWD/nav.pl $msg | data-freq --limit 100 | egrep "[a-z|A-Z]" | grep -v "#"`);
+     $cmd->{action} = sprintf(`perl $PWD/lib/enterprise/nav.pl $msg | data-freq --limit 100 | egrep "[a-z|A-Z]" | grep -v "#"`);
      #sprintf(`perl /home/hagen/myperl/AI-MicroStructure-0.01/teswikilist05.pl $msg | data-freq --limit 100 | egrep ": [a-zA-Z]" | grep -v "#"`);
 
      $cmd->{action} = [map{my @a= [split(":",$_)]; $a[0][0]=~ s/ //g; $_={neighbour => $a[0][1], spawn => $a[0][0]};}split("\n",$cmd->{action})];
@@ -63,9 +63,9 @@ my $server = Net::Async::WebSocket::Server->new(
          on_frame => sub {
             my ( $self, $frame ) = @_;
             $self->{frame} = $frame;
-            $self->send_frame( $list );
             $list = printer($self, $frame);
-            print Dumper $list;
+	    $self->send_frame( $list );
+            
          },
       );
    }
