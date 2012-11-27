@@ -34,12 +34,14 @@
                 };
             }
 
+/*
             $(document).ready(function() {
                 $('#42').onwebkitspeechchange = function(e) {
                         var ws = new WebSocket("ws:0.0.0.0:3001");
                         ws.send(e);
                 };
             }
+*/
 
             $(document).ready(function() {
                 $('#container').html('Connecting...');
@@ -94,11 +96,16 @@ z-index: 2;
 */
 </style>
 </head>
-
 <body>
+    <script>
+        var sending = function(e) {
+            var ws = new WebSocket("ws:0.0.0.0:3001");
+            ws.send(e);
+        };
+    </script>
     <div id="container" style="border:1px solid #ccc; width:500px"></div>
     <div class='speech'>
-        <input  class="speechinput" id=42 x-webkit-speech="">
+        <input  class="speechinput" id=42 x-webkit-speech="" onwebkitspeechchange="sending()" />
     </div>
 </body>
 </html>
