@@ -2,11 +2,11 @@
 <!-- saved from url=(0038)file:///home/hagen/Desktop/speack.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Overview</title>
-    
+
 
      <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-<script>
+     <script>
         function Chat(options) {
                 var chat = this;
 
@@ -42,22 +42,11 @@
  </script>
  <style>
  .answer {
- 
+
  }
- 
+
  </style>
-</head>
-<body style="background:url(http://quantup.com/lib/image/enterprise.png) no-repeat; width:50%;">
 
-
-
-<input id="speech" type="text" x-webkit-speech="x-webkit-speech" lang="en-US">    
-<script>
-if (document.createElement("input").webkitSpeech === undefined) {  
-    alert("Speech input is not supported in your browser.");  
-}  
-</script>
-<div class="answer">Houston. <br><br> </div>
 <script>
 $(document).ready(function () {
 
@@ -89,21 +78,21 @@ $(document).ready(function () {
        $(".answer").text("");
        return;
      }
-    
+
 // For "new line" commands, add double line breaks.
      if(val.match(/(enter|new|transmit|submit|begin|send)/i)) {
         ws.send(val);
 
         val = "<br /><br />";
      }
-     
+
      else {
 
 // Capitalize the first letter of the sentence.
     val = val.substr(0, 1).toUpperCase() + val.substr(1);
 
 // If the last letter is a alphanumeric character, add a period (full stop)
-    if(val.match(/[a-zA-Z]$/)) 
+    if(val.match(/[a-zA-Z]$/))
            val = val + ".";
      }
 
@@ -122,11 +111,11 @@ $(document).ready(function () {
 
 
 
- 	
+
  setInterval(function(){
- 
+
  $("#speech").click();
- 
+
  },10000);
 
 
@@ -134,9 +123,19 @@ $(document).ready(function () {
 </script>
 
 
+</head>
+<body style="background:url(http://quantup.com/lib/image/enterprise.png) no-repeat; width:50%;">
+
+<input id="speech" type="text" x-webkit-speech="x-webkit-speech" lang="en-US">
+<script>
+if (document.createElement("input").webkitSpeech === undefined) {
+    alert("Speech input is not supported in your browser.");
+}
+</script>
+
+<div class="answer"></div>
+
+</body>
+</html>
 
 
-
-
-
-</body></html>
