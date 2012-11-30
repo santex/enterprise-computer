@@ -34,7 +34,8 @@ sub printer {
   my $cmd = {};
 
      $msg = "space" unless($msg);
-    
+
+     `mplayer ~/enterprise-computer/media/acknowledge.ogg &`;
      `echo $msg | festival --tts`;
      
      
