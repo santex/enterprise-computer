@@ -12,7 +12,7 @@
                     container.html('');
                     container.append('<div id="websocket-chat"></div>');
                     $('#websocket-chat').append('<pre id="websocket-chat-log" style="height:200px; overflow: auto;"></pre>');
-                    $('#websocket-chat').append('<form id="websocket-chat-form"><input id="websocket-chat-input" style="width:90%" /></form>');
+                    $('#websocket-chat').append('<form id="websocket-chat-form"><input id="websocket-chat-input" x-webkit-speech="" style="width:90%" /></form>');
                     $('#websocket-chat-form').submit(function() {
                         var message = $('#websocket-chat-input').val().substring(0, 140);
                         $('#websocket-chat-input').val('');
@@ -34,12 +34,23 @@
                 };
             }
 
+
+
+
+
+
+
+
+
+
             $(document).ready(function() {
                 $('#42').onwebkitspeechchange = function(e) {
                         var ws = new WebSocket("ws:0.0.0.0:3001");
                         ws.send(e);
+			alert(1);	
                 };
             });
+
 
             $(document).ready(function() {
                 $('#container').html('Connecting...');
@@ -94,7 +105,6 @@ z-index: 2;
 */
 </style>
 </head>
-
 <body>
     <div id="container" style="border:1px solid #ccc; width:500px"></div>
     <div class='speech'>
