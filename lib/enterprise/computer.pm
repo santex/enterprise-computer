@@ -34,8 +34,14 @@ sub printer {
   my $cmd = {};
 
      $msg = "space" unless($msg);
-
+    
+     `echo $msg | festival --tts`;
+     
+     
      $cmd->{action} = "";
+ 
+     
+ 
      #+ options to sort. Changed from
      #stop=$(perl -MAI::MicroStructure::WordBlacklist -E  "my \$s=AI::MicroStructure::WordBlacklist::getStopWords('en'); my @s = keys %\$s; print join('|',@s);")
 
