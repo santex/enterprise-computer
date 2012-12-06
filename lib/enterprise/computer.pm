@@ -35,7 +35,18 @@ sub printer {
 
      $msg = "space" unless($msg);
 
-     $cmd->{action} = sprintf(`perl $PWD/lib/enterprise/nav.pl $msg | data-freq --limit 100 | egrep "[a-z|A-Z]" | grep -v "#"`);
+     `mplayer ~/enterprise-computer/media/acknowledge.ogg &`;
+     `mplayer http://ubuntu.hbr1.com:19800/trance.ogg &`;
+     
+     
+     $cmd->{action} = "";
+ 
+     
+ 
+     #+ options to sort. Changed from
+     #stop=$(perl -MAI::MicroStructure::WordBlacklist -E  "my \$s=AI::MicroStructure::WordBlacklist::getStopWords('en'); my @s = keys %\$s; print join('|',@s);")
+
+
      #sprintf(`perl /home/hagen/myperl/AI-MicroStructure-0.01/teswikilist05.pl $msg | data-freq --limit 100 | egrep ": [a-zA-Z]" | grep -v "#"`);
 
      $cmd->{action} = [map{my @a= [split(":",$_)]; $a[0][0]=~ s/ //g; $_={neighbour => $a[0][1], spawn => $a[0][0]};}split("\n",$cmd->{action})];
